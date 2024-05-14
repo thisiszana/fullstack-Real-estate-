@@ -1,6 +1,6 @@
-import User from "@/models/User";
+import User from "@/utils/User";
 import { hashedPass } from "@/models/auth";
-import connectDB from "@/models/connectDB";
+import connectDB from "@/utils/connectDB";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
@@ -44,7 +44,7 @@ export async function POST(req) {
 
     return NextResponse.json(
       { message: "حساب کاربری ایجاد شد." },
-      { status: 201 },
+      { status: 201 }
     );
   } catch (error) {
     console.log(error);
