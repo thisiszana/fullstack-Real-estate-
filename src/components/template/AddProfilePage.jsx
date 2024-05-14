@@ -7,10 +7,10 @@ import TextInput from "@/module/TextInput";
 import TextList from "@/module/TextList";
 import styles from "@/template/AddProfilePage.module.css";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
-export default function AddProfilePage() {
+export default function AddProfilePage({ data }) {
   const [profileData, setProfileData] = useState({
     title: "",
     description: "",
@@ -26,10 +26,14 @@ export default function AddProfilePage() {
 
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    if (data) setProfileData(data);
+  }, []);
+
   const router = useRouter();
 
   const submitHandler = async () => {
-    // setLoading(true);
+    setLoading(true);
     const res = await fetch("/api/profile", {
       method: "POST",
       body: JSON.stringify(profileData),
@@ -37,7 +41,24 @@ export default function AddProfilePage() {
     });
     const data = await res.json();
     console.log(data);
-    // setLoading(false);
+    setLoading(false);
+    if (data.error) {
+      toast.error(data.error);
+    } else {
+      toast.success(data.message);
+      router.refresh();
+    }
+  };
+
+  const editHandler = async () => {
+    setLoading(true);
+    const res = await fetch("/api/profile", {
+      method: "PATCH",
+      body: JSON.stringify(profileData),
+      headers: { "Content-Type": "application/json" },
+    });
+    const data = await res.json();
+    setLoading(false);
     if (data.error) {
       toast.error(data.error);
     } else {
@@ -48,7 +69,7 @@ export default function AddProfilePage() {
 
   return (
     <div className={styles.container}>
-      <h3> "ثبت آگهی"</h3>
+      <h3>{data ? "ویرایش آگهی" : "ثبت آگهی"}</h3>
       <TextInput
         title="عنوان آگهی"
         name="title"
