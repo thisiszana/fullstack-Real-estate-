@@ -74,3 +74,11 @@ export async function POST(req) {
     return NextResponse.json({ error: "مشکل در اتصال به سرور." });
   }
 }
+
+export async function PATCH(req) {
+  try {
+    
+  } catch (error) {
+    
+  }
+}

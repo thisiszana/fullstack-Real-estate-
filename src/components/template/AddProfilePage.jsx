@@ -1,6 +1,7 @@
 "use client";
 
 import CustomDatePicker from "@/module/CustomDatePicker";
+import Loader from "@/module/Loader";
 import RadioList from "@/module/RadioList";
 import TextInput from "@/module/TextInput";
 import TextList from "@/module/TextList";
@@ -103,10 +104,17 @@ export default function AddProfilePage() {
         setProfileData={setProfileData}
       />
       <Toaster />
-
-      <button className={styles.submit} onClick={submitHandler}>
-        ثبت آگهی
-      </button>
+      {loading ? (
+        <Loader />
+      ) : data ? (
+        <button className={styles.submit} onClick={editHandler}>
+          ویرایش آگهی
+        </button>
+      ) : (
+        <button className={styles.submit} onClick={submitHandler}>
+          ثبت آگهی
+        </button>
+      )}
     </div>
   );
 }
