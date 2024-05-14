@@ -1,5 +1,5 @@
-import User from "@/utils/User";
-import { hashedPass } from "@/models/auth";
+import User from "@/models/User";
+import { hashedPass } from "@/utils/auth";
 import connectDB from "@/utils/connectDB";
 import { NextResponse } from "next/server";
 

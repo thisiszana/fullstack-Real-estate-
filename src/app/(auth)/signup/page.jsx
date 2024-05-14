@@ -3,9 +3,11 @@ import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import SignUpPage from "@/template/SignUpPage";
 
-export default function Page() {
-  const session =  getServerSession(authOptions);
+async function Signup() {
+  const session = await getServerSession(authOptions);
   if (session) redirect("/");
-  
+
   return <SignUpPage />;
 }
+
+export default Signup

@@ -1,7 +1,7 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import User from "@/utils/User";
-import { verifyPass } from "@/models/auth";
+import User from "@/models/User";
+import { verifyPass } from "@/utils/auth";
 import connectDB from "@/utils/connectDB";
 
 export const authOptions = {
@@ -38,20 +38,9 @@ export const authOptions = {
     }),
   ],
   pages: {
-    signIn: "/api/auth/sigin",
+    signIn: "/auth/signin",  
   },
-  callbacks: {
-    async jwt({ token, user }) {
-      if (user) {
-        token.id = user.id;
-      }
-      return token;
-    },
-    async session({ session, token }) {
-      session.user.id = token.id;
-      return session;
-    },
-  },
+  secret: process.env.NEXTAUTH_SECRET,
 };
 
 const handler = NextAuth(authOptions);

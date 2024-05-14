@@ -1,10 +1,10 @@
 import DashboardSidebar from "@/layout/DashboardSidebar";
 
 import { getServerSession } from "next-auth";
-import { authOptions } from "../api/auth/[...nextauth]/route";
 import { redirect } from "next/navigation";
-import User from "@/utils/User";
+import User from "@/models/User";
 import connectDB from "@/utils/connectDB";
+import { authOptions } from "../api/auth/[...nextauth]/route";
 
 export default async function DashboardLayout({ children }) {
   const session = await getServerSession(authOptions);

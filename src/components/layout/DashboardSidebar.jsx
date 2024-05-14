@@ -13,7 +13,7 @@ export default function DashboardSidebar({children, email}) {
         <span></span>
         <Link href="/dashboard">حساب کاربری</Link>
         <Link href="/dashboard/my-profiles">آگهی های من</Link>
-        <Link href="/dashboard/add">ثبت آگهی</Link>
+        <Link href="/dashboard/addpost">ثبت آگهی</Link>
         
         <LogoutButton />
       </div>

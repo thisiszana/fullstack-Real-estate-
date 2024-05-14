@@ -3,9 +3,12 @@ import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import SignInPage from "@/template/SignInPage";
 
-export default function page() {
-  const session =  getServerSession(authOptions);
+async  function Signin() {
+  const session = await getServerSession(authOptions);
+  console.log(session)
   if (session) redirect("/");
 
   return <SignInPage />;
 }
+
+export default Signin
