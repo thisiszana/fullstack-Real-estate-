@@ -1,7 +1,6 @@
 import User from "@/models/User";
 import { hashedPass } from "@/models/auth";
 import connectDB from "@/models/connectDB";
-import { STATIC_STATUS_PAGE_GET_INITIAL_PROPS_ERROR } from "next/dist/lib/constants";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
@@ -46,7 +45,6 @@ export async function POST(req) {
     return NextResponse.json(
       { message: "حساب کاربری ایجاد شد." },
       { status: 201 },
-      { email: newUser.email }
     );
   } catch (error) {
     console.log(error);
