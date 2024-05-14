@@ -1,6 +1,7 @@
+import NextAuthProvider from "@/providers/NextAuthProvider";
+import Layout from "@/layout/Layout";
 import { yekan } from "@/utils/font";
 import "./globals.css";
-import Layout from "@/layout/Layout";
 
 export const metadata = {
   title: "املاک زانا",
@@ -11,7 +12,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fa" dir="rtl">
       <body className={yekan.className}>
-        <Layout>{children}</Layout>
+        <NextAuthProvider>
+          <Layout>{children}</Layout>
+        </NextAuthProvider>
       </body>
     </html>
   );
