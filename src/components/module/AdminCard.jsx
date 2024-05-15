@@ -1,8 +1,9 @@
 "use client";
 
 import styles from "@/module/AdminCard.module.css";
-import { useRouter } from "next/router";
-import { Toaster } from "react-hot-toast";
+import { sp } from "@/utils/replaceNumber";
+import { useRouter } from "next/navigation";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function AdminCard({
   data: { _id, title, description, location, price },

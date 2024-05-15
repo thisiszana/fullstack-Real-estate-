@@ -4,6 +4,8 @@ import { authOptions } from "../api/auth/[...nextauth]/route";
 import { redirect } from "next/navigation";
 import User from "@/models/User";
 import Profile from "@/models/Profile";
+import DashboardSidebar from "@/layout/DashboardSidebar";
+import AdminPage from "@/template/AdminPage";
 
 export default async function page() {
   await connectDB();
@@ -17,7 +19,7 @@ export default async function page() {
 
   return (
     <DashboardSidebar role={user.role} email={user.email}>
-      <AdminPage Profile={Profile} />
+      <AdminPage profiles={profiles} />
     </DashboardSidebar>
   );
 }

@@ -7,7 +7,12 @@ import connectDB from "@/utils/connectDB";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 import toast, { Toaster } from "react-hot-toast";
 
+export const metadata = {
+  title: "پنل کاربری املاک",
+};
+
 export default async function DashboardLayout({ children }) {
+  
   const session = await getServerSession(authOptions);
   if (!session) redirect("/signin");
 
