@@ -2,7 +2,8 @@ import BuyResidentialsPage from "@/template/BuyResidentialsPage";
 import toast, { Toaster } from "react-hot-toast";
 
 export default async function BuyResidentials({searchParams}) {
-  const res = await fetch("http://localhost:3000/api/profile", {
+  //اینجا باید دامنه اصلی سایت یا پورت سیستم رو قرار بدهید.
+  const res = await fetch(`${process.env.PORT}/api/profile`, {
     cache: "no-store",
   });
   const data = await res.json();
