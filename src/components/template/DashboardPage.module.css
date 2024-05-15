@@ -1,10 +1,17 @@
-.cotainer h3 {
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  height: 100%;
+}
+
+.container h3 {
   color: #304ffe;
   font-weight: 400;
   font-size: 1.5rem;
   margin-bottom: 20px;
 }
-.cotainer p {
+.container p {
   color: grey;
 }
 
@@ -25,4 +32,18 @@
 
 .createdAt span {
   color: #304ffe;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    text-align: center;
+  }
+
+  .container h2 {
+    font-size: 1.5rem;
+  }
+
+  .container p {
+    font-size: 1rem;
+  }
 }

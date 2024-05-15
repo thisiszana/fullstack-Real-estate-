@@ -3,6 +3,8 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import User from "@/models/User";
 import { verifyPass } from "@/utils/auth";
 import connectDB from "@/utils/connectDB";
+import { validateEmail, validatePassword } from "@/utils/validate";
+import { e2p } from "@/utils/replaceNumber";
 
 export const authOptions = {
   session: { strategy: "jwt" },
@@ -21,6 +23,15 @@ export const authOptions = {
           throw new Error("لطفا اطلاعات معتبر وارد کنید");
         }
 
+        if (!validateEmail(email)) throw new Error("ایمیل معتبر نیست");
+
+        if (!validatePassword(password))
+          throw new Error(
+            e2p(
+              "رمز عبور باید لاتین، حداقل 8 کاراکتر با حروف کوچک و بزرگ، عدد و یک حرف خاص باشد"
+            )
+          );
+
         const user = await User.findOne({ email });
 
         if (!user) {
@@ -38,7 +49,7 @@ export const authOptions = {
     }),
   ],
   pages: {
-    signIn: "/auth/signin",  
+    signIn: "/auth/signin",
   },
   secret: process.env.NEXTAUTH_SECRET,
 };

@@ -1,6 +1,8 @@
 import User from "@/models/User";
 import { hashedPass } from "@/utils/auth";
 import connectDB from "@/utils/connectDB";
+import { e2p } from "@/utils/replaceNumber";
+import { validateEmail, validatePassword } from "@/utils/validate";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
@@ -15,15 +17,21 @@ export async function POST(req) {
         { status: 422 }
       );
 
-    if (!email)
+    if (!validateEmail(email))
       return NextResponse.json(
-        { error: "ایمیل را وارد کنید!" },
+        {
+          error: "ایمیل معتبر نیست",
+        },
         { status: 422 }
       );
 
-    if (!password)
+    if (!validatePassword(password))
       return NextResponse.json(
-        { error: "رمز عبور را وارد کنید!" },
+        {
+          error: e2p(
+            "رمز عبور باید لاتین، حداقل 8 کاراکتر با حروف کوچک و بزرگ، عدد و یک حرف خاص باشد"
+          ),
+        },
         { status: 422 }
       );
 
