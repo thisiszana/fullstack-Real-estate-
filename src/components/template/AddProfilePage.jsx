@@ -28,7 +28,7 @@ export default function AddProfilePage({ data }) {
 
   useEffect(() => {
     if (data) setProfileData(data);
-  }, []);
+  }, [data]);
 
   const router = useRouter();
 

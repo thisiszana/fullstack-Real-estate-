@@ -44,7 +44,7 @@ export default function DashboardCard({ data }) {
             <Loader />
           ) : (
             <>
-              "حذف آگهی"
+              {`حذف آگهی`}
               <AiOutlineDelete />
             </>
           )}

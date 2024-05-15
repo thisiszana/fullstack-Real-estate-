@@ -13,6 +13,7 @@ export default function Sidebar() {
       <Link href="/buy-residential">همه</Link>
       {Object.keys(categories).map((i) => (
         <Link
+          key={i}
           href={{
             pathname: "/buy-residential",
             query: { category: i },
