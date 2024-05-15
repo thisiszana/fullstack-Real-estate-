@@ -33,7 +33,7 @@ export default function DashboardCard({ data }) {
 
   return (
     <div className={styles.container}>
-      <Card data={data} />
+      <Card data={data} className={styles.cardBox} />
       <div className={styles.main}>
         <button onClick={editHandler}>
           ویرایش

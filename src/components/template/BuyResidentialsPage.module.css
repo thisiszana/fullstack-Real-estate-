@@ -31,3 +31,29 @@
   border-radius: 10px;
   height: 50px;
 }
+
+@media (max-width: 805px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    margin-bottom: 4rem;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 597px) {
+  .container {
+    align-items: center;
+  }
+
+  .sidebar {
+    margin-left: 0;
+  }
+
+  .main {
+    justify-content: center;
+  }
+
+}

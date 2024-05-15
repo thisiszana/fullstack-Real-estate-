@@ -119,3 +119,23 @@
   margin-left: 5px;
   color: #304ffe;
 }
+
+
+@media (max-width: 700px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-right: 0;
+  }
+
+  .price {
+    padding: 20px 10px !important;
+  }
+}

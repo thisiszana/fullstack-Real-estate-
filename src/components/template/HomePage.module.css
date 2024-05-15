@@ -105,4 +105,8 @@
   .city ul {
     justify-content: center;
   }
+
+  .city li {
+    justify-content: space-around;
+  }
 }

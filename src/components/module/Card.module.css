@@ -51,3 +51,15 @@
 .container a svg {
   font-size: 1.5rem;
 }
+
+@media (max-width: 670px) {
+  .container {
+    margin: 15px auto;
+  }
+}
+
+@media (max-width: 620px) {
+  .container {
+    width: 200px;
+  }
+}

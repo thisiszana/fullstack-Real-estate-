@@ -36,7 +36,7 @@
 
 @media only screen and (max-width: 600px) {
   .container {
-    text-align: center;
+    gap: 1rem;
   }
 
   .container h2 {
