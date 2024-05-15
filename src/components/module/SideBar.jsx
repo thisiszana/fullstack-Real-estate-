@@ -1,4 +1,4 @@
-import styles from "@/module/SideBar.module.css";
+import styles from "./SideBar.module.css";
 import Link from "next/link";
 import { HiFilter } from "react-icons/hi";
 import { categories } from "src/constant/strings";
