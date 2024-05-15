@@ -1,5 +1,5 @@
 import Card from "@/module/Card";
-import Sidebar from "@/module/Sidebar";
+import Sidebar from "../module/Sidebar";
 import styles from "@/template/BuyResidentialsPage.module.css";
 
 export default function BuyResidentialsPage({ data }) {
