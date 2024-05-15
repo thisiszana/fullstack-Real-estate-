@@ -1,9 +1,9 @@
-import styles from "./SideBar.module.css";
+import styles from "@/module/SidebarProfile.module.css";
 import Link from "next/link";
 import { HiFilter } from "react-icons/hi";
 import { categories } from "src/constant/strings";
 
-export default function Sidebar() {
+export default function SidebarProfile() {
   return (
     <div className={styles.container}>
       <p>
