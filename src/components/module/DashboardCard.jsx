@@ -3,7 +3,7 @@
 import styles from "@/module/DashboardCard.module.css";
 import Card from "./Card";
 import toast, { Toaster } from "react-hot-toast";
-import { AiOutlineDelete } from "react-icons/ai";
+import { FaRegTrashCan } from "react-icons/fa6";
 import { FiEdit } from "react-icons/fi";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -45,7 +45,7 @@ export default function DashboardCard({ data }) {
           ) : (
             <>
               {`حذف آگهی`}
-              <AiOutlineDelete />
+              <FaRegTrashCan />
             </>
           )}
         </button>

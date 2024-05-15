@@ -45,3 +45,14 @@
     margin-left: 10px;
   }
 }
+
+
+@media (max-width: 500px) {
+  .header a {
+    font-size: .9rem;
+  }
+
+  .header svg {
+    font-size: 1.1rem;
+  }
+}

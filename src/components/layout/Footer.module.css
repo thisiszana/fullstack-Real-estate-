@@ -19,3 +19,14 @@
   font-size: 1.4rem;
   margin-bottom: 10px;
 }
+
+@media (max-width: 500px) {
+  .desc h3 {
+    font-size: 1.2rem;
+  }
+
+  .footer li {
+    font-size: .9rem;
+    padding: 10px 0;
+  }
+}

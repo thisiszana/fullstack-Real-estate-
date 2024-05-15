@@ -35,6 +35,8 @@
 .main button:last-child {
   border: 1px solid #db0505;
   color: #db0505;
+  font-weight: 600;
+  font-size: .9rem;
 }
 
 @media (max-width: 670px) {
@@ -53,6 +55,9 @@
   }
 
   .main button {
+    justify-content: space-around;
+    padding: 0 15px;
     margin-bottom: 15px;
+    font-size: .9;
   }
 }
